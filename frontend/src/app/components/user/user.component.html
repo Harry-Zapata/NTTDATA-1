@@ -1,0 +1,27 @@
+<div class="container text-center">
+<div class="title-container">
+    <h1 class="title">Lista de Usuarios</h1>
+
+    <button class="btn btn-primary" (click)="traerData()">Actualizar</button>
+</div>
+<div class="user-grid">
+    <div class="user-card" *ngFor="let users of data">
+      <img
+        src="{{ users.foto }}"
+        class="user-photo"
+        alt="{{ users.nombre }}"
+      />
+      <div class="user-info">
+        <p class="user-name">{{ users.nombre }}</p>
+        <p><strong>Género:</strong> <br> {{ users.genero }}</p>
+        <p><strong>Ubicación:</strong> <br>{{ users.ubicacion }}</p>
+        <p><strong>Correo:</strong><br> {{ users.correo }}</p>
+        <p><strong>Fecha de nacimiento:</strong> {{ users.fecha_nacimiento | date : 'dd/MM/yyyy' }}</p>
+      </div>
+
+      <div class="buttons">
+        <button class="btn btn-primary" (click)="irUsuario(users.id)">Ver detalles</button>
+      </div>
+    </div>
+  </div>
+</div>

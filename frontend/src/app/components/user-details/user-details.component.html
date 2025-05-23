@@ -1,0 +1,25 @@
+<!-- creacion de vista usuario -->
+<div class="container">
+  <div class="title-container">
+    <h1 class="title">Detalles del Usuario</h1>
+  </div>
+  <div class="user-grid">
+    <div class="user-card">
+      <img src="{{ user.foto }}" class="user-photo" alt="{{ user.nombre }}" />
+      <div class="user-info">
+        <p class="user-name">{{ user.nombre }}</p>
+        <p><strong>Género:</strong> {{ user.genero }}</p>
+        <p><strong>Ubicación:</strong> {{ user.ubicacion }}</p>
+        <p><strong>Correo:</strong> {{ user.correo }}</p>
+        <p>
+          <strong>Fecha de nacimiento:</strong>
+          {{ user.fecha_nacimiento | date : "dd/MM/yyyy" }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="buttons d-flex justify-content-center">
+  <button class="btn btn-danger w-25" (click)="volver()">Volver</button>
+</div>
